@@ -84,7 +84,7 @@ function Matriculas() {
           ))}
         </select>
         <select name="disciplina_id" value={form.disciplina_id} onChange={alterarCampo} required>
-          <option value="">Selecione a disciplina</option> //. O usuario lê o nome, mas o React guarda o ID no form. É esse ID que viaja para o backend para a Chave Estrangeira
+          <option value="">Selecione a disciplina</option> {/*O usuario lê o nome, mas o React guarda o ID no form. É esse ID que viaja para o backend para a Chave Estrangeira*/}
           {disciplinas.map((d) => (
             <option key={d.id} value={d.id}>{d.codigo} - {d.nome}</option>
           ))}
@@ -120,7 +120,7 @@ function Matriculas() {
           {lista.map((m) => (
             <tr key={m.id}>
               <td>{m.id}</td>
-              <td>{m.aluno ? m.aluno.nome : m.aluno_id}</td> //se objeto m.aluno chegou da API exibe o nome, se devolver apenas o ID numérico, ele não quebra a tela e exibe o ID
+              <td>{m.aluno ? m.aluno.nome : m.aluno_id}</td> {/* se objeto m.aluno chegou da API exibe o nome, se devolver apenas o ID numérico, ele não quebra a tela e exibe o ID*/}
               <td>{m.disciplina ? m.disciplina.nome : m.disciplina_id}</td>
               <td>{m.data_matricula}</td>
               <td>{m.nota === null ? "-" : m.nota}</td>
@@ -142,3 +142,4 @@ function Matriculas() {
 }
 
 export default Matriculas;
+
