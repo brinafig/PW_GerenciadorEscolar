@@ -13,14 +13,14 @@ function App() {
       <header>
         <h1>Gerenciador Escolar</h1>
         <nav>
-          <button className={aba === "alunos" ? "ativo" : ""} onClick={() => setAba("alunos")}>Alunos</button> //altera a palavra guardad no estado
+          <button className={aba === "alunos" ? "ativo" : ""} onClick={() => setAba("alunos")}>Alunos</button> {/*altera a palavra guardad no estado*/}
           <button className={aba === "disciplinas" ? "ativo" : ""} onClick={() => setAba("disciplinas")}>Disciplinas</button>
           <button className={aba === "matriculas" ? "ativo" : ""} onClick={() => setAba("matriculas")}>Matriculas</button>
         </nav>
       </header>
 
       <main>
-        {aba === "alunos" && <Alunos />} //Se aba for exatamente igual a 'alunos', então desenhe o componente alunos na tela. senão, não desenhe nada
+        {aba === "alunos" && <Alunos />} {/*Se aba for exatamente igual a 'alunos', então desenhe o componente alunos na tela. senão, não desenhe nada*/}
         {aba === "disciplinas" && <Disciplinas />}
         {aba === "matriculas" && <Matriculas />}
       </main>
