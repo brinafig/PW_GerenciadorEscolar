@@ -68,10 +68,11 @@ function Alunos() { ////usestate é hook. sempre que o valor da variáveil muda,
       setErro(e.message);
     }
   }
-
+// se existe um ID sendo editado escreve editar aluno, se não escreve novo aluno
   return (
     <section>
-      <h2>{editandoId ? "Editar aluno" : "Novo aluno"}</h2> // se existe um ID sendo editado escreve editar aluno, se não escreve novo aluno
+      <h2>{editandoId ? "Editar aluno" : "Novo aluno"}</h2>  
+      
       {erro && <p className="erro">{erro}</p>}
 
       <form onSubmit={salvar}>
@@ -107,15 +108,15 @@ function Alunos() { ////usestate é hook. sempre que o valor da variáveil muda,
           </tr>
         </thead>
         <tbody>
-          {lista.map((a) => ( //faz um loop pra devolver as linhas da tabela
-            <tr key={a.id}> //exigencia do React pra renderizacao de listas
+          {lista.map((a) => ( //faz um loop pra devolver as linhas da tabela o key é exigencia do React pra renderizacao de listas
+            <tr key={a.id}> 
               <td>{a.id}</td>
               <td>{a.nome}</td>
               <td>{a.email}</td>
-              <td>{a.data_nascimento || "-"}</td> //se tiver vazia devolve um tracinho 
+              <td>{a.data_nascimento || "-"}</td> {/* se tiver vazia devolve um tracinho */}
               <td>
                 <button onClick={() => editar(a)}>Editar</button>
-                <button className="perigo" onClick={() => excluir(a.id)}>Excluir</button> //tem que receber um ID especifico, sem a seta exclui de tudo
+                <button className="perigo" onClick={() => excluir(a.id)}>Excluir</button> {/*tem que receber um ID especifico, sem a seta exclui de tudo*/}
               </td>
             </tr>
           ))}
